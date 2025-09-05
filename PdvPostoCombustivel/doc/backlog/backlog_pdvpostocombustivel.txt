@@ -17,6 +17,6 @@ Items de backlog
 
 1.2_ Requesitos funcionais
     1.2.1_ Cadastro de Frentista (usuário);
-    1.2.2_ Cadastastro de Produtos; Paulo Augusto Silva Miranda, Gabriel Andrade Cunha, Gilherme Gonçalves Mendonça, Lucas Vicente Pereira Costa, Miguel
+    1.2.2_ Cadastastro de Produtos; Paulo Augusto Silva Miranda, Gabriel Andrade Cunha, Gilherme Gonçalves Mendonça, Lucas Vicente Pereira Costa, Miguel Melo Santos, Felipe Rohnelt Rodrigues dos Santos, Évelyn de Morais Alves Soares Oliveira, Vinicius Barbosa Puggina
     1.2.3_ Gestão de compras (custo do projeto);
     1.2.4_ Gestão de Recusos;
