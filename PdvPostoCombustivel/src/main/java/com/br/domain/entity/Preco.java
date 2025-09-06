@@ -1,6 +1,6 @@
 package com.br.domain.entity;
 import java.math.BigDecimal;
-import java.util.Date
+import java.util.Date;
 
 public class Preco{
 
@@ -18,7 +18,7 @@ public class Preco{
     /**
      * Construtor
      */
-    public Contato(BigDecimal valor, Date dataAlteracao, Date horaAlteracao){
+    public Preco(BigDecimal valor, Date dataAlteracao, Date horaAlteracao){
         this.valor = valor;
         this.dataAlteracao = dataAlteracao;
         this.horaAlteracao = horaAlteracao;
