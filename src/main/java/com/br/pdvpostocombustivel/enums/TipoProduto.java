@@ -1,4 +1,4 @@
 package com.br.pdvpostocombustivel.enums;
 
-public enum TipoRepository {
+public enum TipoProduto {
 }
