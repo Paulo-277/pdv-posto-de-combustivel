@@ -1,16 +1,32 @@
 package com.br.pdvpostocombustivel.domain.entity;
-import java.math.BigDecimal;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
+@Entity
+@Table(name = "estoque")
 public class Estoque{
 
+    @Column(length = 10, nullable = false)
     private BigDecimal quantidade;
+
+    @Column(length = 50, nullable = false)
     private String localTanque;
+
+    @Column(length = 100, nullable = false)
     private String localEndereco;
+
+    @Column(length = 10, nullable = false)
     private String loteFabricacao;
-    private String dataValidade;
+
+    @Column(length = 10, nullable = false)
+    private LocalDate dataValidade;
 
 
-    public Estoque(BigDecimal quantidade, String localTanque, String localEndereco, String loteFabricacao, String dataValidade) {
+    public Estoque(BigDecimal quantidade, String localTanque, String localEndereco, String loteFabricacao, LocalDate dataValidade) {
         this.quantidade = quantidade;
         this.localTanque = localTanque;
         this.localEndereco = localEndereco;
@@ -30,7 +46,7 @@ public class Estoque{
     public String getLoteFabricacao(){
         return loteFabricacao;
     }
-    public String getDataValidade(){
+    public LocalDate getDataValidade(){
         return dataValidade;
     }
 
@@ -46,7 +62,7 @@ public class Estoque{
     public void setLoteFabricacao(String loteFabricacao){
         this.loteFabricacao = loteFabricacao;
     }
-    public void setDataValidade(String dataValidade){
+    public void setDataValidade(LocalDate dataValidade){
         this.dataValidade = dataValidade;
     }
 }

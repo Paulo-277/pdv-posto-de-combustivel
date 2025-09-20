@@ -1,17 +1,32 @@
 package com.br.pdvpostocombustivel.domain.entity;
-import java.util.Date;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
+import java.time.LocalDate;
+
+@Entity
+@Table(name = "Custo")
 public class Custo{
 
     //Atributos
-    private double imposto;
-    private double custoVariavel;
-    private double custoFixo;
-    private double margemLucro;
-    private Date dataProcessamento;
+    @Column(length = 5,nullable = false)
+    private Double imposto;
+
+    @Column(length = 10, nullable = false)
+    private Double custoVariavel;
+
+    @Column(length = 10, nullable = false)
+    private Double custoFixo;
+
+    @Column(length = 5, nullable = false)
+    private Double margemLucro;
+
+    @Column(length = 10, nullable = false)
+    private LocalDate dataProcessamento;
 
     //Construtor
-    public Custo(double imposto, double custoVariavel, double custoFixo, double margemLucro, Date dataProcessamento){
+    public Custo(double imposto, double custoVariavel, double custoFixo, double margemLucro, LocalDate dataProcessamento){
         this.imposto = imposto;
         this.custoVariavel = custoVariavel;
         this.custoFixo = custoFixo;
@@ -32,7 +47,7 @@ public class Custo{
     public double getMargemLucro() {
         return margemLucro;
     }
-    public Date getDataProcessamento() {
+    public LocalDate getDataProcessamento() {
         return dataProcessamento;
     }
 
@@ -49,7 +64,7 @@ public class Custo{
     public void setMargemLucro(double margemLucro) {
         this.margemLucro = margemLucro;
     }
-    public void setDataProcessamento(Date dataProcessamento) {
+    public void setDataProcessamento(LocalDate dataProcessamento) {
         this.dataProcessamento = dataProcessamento;
     }
 }

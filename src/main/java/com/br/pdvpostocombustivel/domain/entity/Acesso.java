@@ -1,10 +1,20 @@
 package com.br.pdvpostocombustivel.domain.entity;
 
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "Acesso")
 public class Acesso{
     /**
      * Atributos
      */
+    @Column(length = 30, nullable = false)
     private String usuario;
+
+    @Column(length = 20, nullable = false)
     private String senha;
 
     /**

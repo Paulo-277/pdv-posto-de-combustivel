@@ -1,24 +1,31 @@
 package com.br.pdvpostocombustivel.domain.entity;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
 import java.math.BigDecimal;
-import java.util.Date;
+import java.time.LocalDate;
 
+@Entity
+@Table(name = "preco")
 public class Preco{
-
-
     /**
      * Atributos : definem um atributo
      */
+    @Column(length = 10, nullable = false)
     private BigDecimal valor;
 
-    private Date dataAlteracao;
+    @Column(length = 10, nullable = false)
+    private LocalDate dataAlteracao;
 
-    private Date horaAlteracao;
+    @Column(length = 10, nullable = false)
+    private LocalDate horaAlteracao;
 
 
     /**
      * Construtor
      */
-    public Preco(BigDecimal valor, Date dataAlteracao, Date horaAlteracao){
+    public Preco(BigDecimal valor, LocalDate dataAlteracao, LocalDate horaAlteracao){
         this.valor = valor;
         this.dataAlteracao = dataAlteracao;
         this.horaAlteracao = horaAlteracao;
@@ -30,10 +37,10 @@ public class Preco{
     public BigDecimal getValor(){
         return valor;
     }
-    public Date getDataAlteracao(){
+    public LocalDate getDataAlteracao(){
         return dataAlteracao;
     }
-    public Date getHoraAlteracao(){
+    public LocalDate getHoraAlteracao(){
         return horaAlteracao;
     }
 
@@ -43,10 +50,10 @@ public class Preco{
     public void setValor(BigDecimal valor){
         this.valor = valor;
     }
-    public void setDataAlteracao(Date dataAlteracao){
+    public void setDataAlteracao(LocalDate dataAlteracao){
         this.dataAlteracao = dataAlteracao;
     }
-    public void setHoraAlteracao(Date horaAlteracao){
+    public void setHoraAlteracao(LocalDate horaAlteracao){
         this.horaAlteracao = horaAlteracao;
     }
 

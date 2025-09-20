@@ -1,15 +1,24 @@
 package com.br.pdvpostocombustivel.domain.entity;
+
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "Contato")
 public class Contato{
-
-
     /**
      * Atributos : definem um atributo
      */
+    @Column(length = 14, nullable = false)
     private String telefone;
 
+    @Column(length = 50, nullable = false)
     private String email;
 
-    private String endereço;
+    @Column(length = 100, nullable = false)
+    private String endereco;
 
 
     /**
@@ -18,7 +27,7 @@ public class Contato{
     public Contato(String telefone, String email, String endereço){
         this.telefone = telefone;
         this.email = email;
-        this.endereço = endereço;
+        this.endereco = endereço;
     }
 
     /**
@@ -31,7 +40,7 @@ public class Contato{
         return email;
     }
     public String getEndereço(){
-        return endereço;
+        return endereco;
     }
 
     /**
@@ -44,7 +53,7 @@ public class Contato{
         this.email = email;
     }
     public void setEndereço(String endereço){
-        this.endereço = endereço;
+        this.endereco = endereço;
     }
 
 }
