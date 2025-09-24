@@ -5,6 +5,7 @@ import com.br.pdvpostocombustivel.api.pessoa.dto.PessoaRequest;
 import com.br.pdvpostocombustivel.api.pessoa.dto.PessoaResponse;
 import com.br.pdvpostocombustivel.domain.entity.Pessoa;
 import com.br.pdvpostocombustivel.domain.repository.PessoaRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class PessoaService {
 
+    // implementa a interface repository de pessoa
     private final PessoaRepository repository;
 
     public PessoaService(PessoaRepository repository) {
@@ -22,9 +24,8 @@ public class PessoaService {
 
     // CREATE
     public PessoaResponse create(PessoaRequest req) {
-        validarUnicidadeCpfCnpj(req.cpfCnpj(), null);
-        Pessoa nova = toEntity(req);
-        return toResponse(repository.save(nova));
+        Pessoa novaPessoa = toEntity(req);
+        return toResponse(repository.save(novaPessoa));
     }
 
     // READ by ID
@@ -50,7 +51,7 @@ public class PessoaService {
         return repository.findAll(pageable).map(this::toResponse);
     }
 
-    // UPDATE (PUT) - substitui todos os campos
+    // UPDATE - substitui todos os campos
     public PessoaResponse update(Long id, PessoaRequest req) {
         Pessoa p = repository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Pessoa não encontrada. id=" + id));
@@ -98,3 +99,26 @@ public class PessoaService {
         repository.findByCpfCnpj(cpfCnpj).ifPresent(existente -> {
             if (idAtual == null || !existente.getId().equals(idAtual)) {
                 throw new DataIntegrityViolationException("CPF/CNPJ já cadastrado: " + cpfCnpj);
+            }
+        });
+    }
+
+    private Pessoa toEntity(PessoaRequest req) {
+        return new Pessoa(
+                req.nomeCompleto(),
+                req.cpfCnpj(),
+                req.numeroCtps(),
+                req.dataNascimento(),
+                req.tipoPessoa()
+                );
+    }
+
+    private PessoaResponse toResponse(Pessoa p) {
+        return new PessoaResponse(
+                p.getNomeCompleto(),
+                p.getCpfCnpj(),
+                p.getNumeroCtps(),
+                p.getDataNascimento()
+        );
+    }
+}

@@ -5,8 +5,7 @@ import java.time.LocalDate;
 /*
 Para Resposta
 */
-public record PessoaResponce(
-        Long id,
+public record PessoaResponse(
         String nomeCompleto,
         String cpfCnpj,
         Long numeroCtps,
