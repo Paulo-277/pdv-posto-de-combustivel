@@ -18,6 +18,7 @@ public class PessoaService {
     // implementa a interface repository de pessoa
     private final PessoaRepository repository;
 
+
     public PessoaService(PessoaRepository repository) {
         this.repository = repository;
     }
@@ -28,7 +29,7 @@ public class PessoaService {
         return toResponse(repository.save(novaPessoa));
     }
 
-    // READ by ID
+    // READ by ID - validar a utilização desse método
     @Transactional(readOnly = true)
     public PessoaResponse getById(Long id) {
         Pessoa p = repository.findById(id)
@@ -51,7 +52,7 @@ public class PessoaService {
         return repository.findAll(pageable).map(this::toResponse);
     }
 
-    // UPDATE - substitui todos os campos
+    // UPDATE  - substitui todos os campos
     public PessoaResponse update(Long id, PessoaRequest req) {
         Pessoa p = repository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Pessoa não encontrada. id=" + id));
@@ -110,7 +111,7 @@ public class PessoaService {
                 req.numeroCtps(),
                 req.dataNascimento(),
                 req.tipoPessoa()
-                );
+        );
     }
 
     private PessoaResponse toResponse(Pessoa p) {
