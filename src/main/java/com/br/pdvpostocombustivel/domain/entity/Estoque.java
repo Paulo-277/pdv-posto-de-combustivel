@@ -1,6 +1,9 @@
 package com.br.pdvpostocombustivel.domain.entity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 import java.math.BigDecimal;
@@ -9,6 +12,10 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "estoque")
 public class Estoque{
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Column(length = 10, nullable = false)
     private BigDecimal quantidade;
@@ -25,6 +32,8 @@ public class Estoque{
     @Column(length = 10, nullable = false)
     private LocalDate dataValidade;
 
+    public Estoque() {
+    }
 
     public Estoque(BigDecimal quantidade, String localTanque, String localEndereco, String loteFabricacao, LocalDate dataValidade) {
         this.quantidade = quantidade;
@@ -32,6 +41,10 @@ public class Estoque{
         this.localEndereco = localEndereco;
         this.loteFabricacao = loteFabricacao;
         this.dataValidade = dataValidade;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public BigDecimal getQuantidade(){
@@ -48,6 +61,10 @@ public class Estoque{
     }
     public LocalDate getDataValidade(){
         return dataValidade;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public void setQuantidade(BigDecimal Quantidade){
