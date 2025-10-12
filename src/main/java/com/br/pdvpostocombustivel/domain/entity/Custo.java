@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
@@ -18,16 +19,16 @@ public class Custo{
 
     //Atributos
     @Column(length = 5,nullable = false)
-    private Double imposto;
+    private BigDecimal imposto;
 
     @Column(length = 10, nullable = false)
-    private Double custoVariavel;
+    private BigDecimal custoVariavel;
 
     @Column(length = 10, nullable = false)
-    private Double custoFixo;
+    private BigDecimal custoFixo;
 
     @Column(length = 5, nullable = false)
-    private Double margemLucro;
+    private BigDecimal margemLucro;
 
     @Column(length = 10, nullable = false)
     private LocalDate dataProcessamento;
@@ -36,7 +37,7 @@ public class Custo{
     public Custo() {
     }
     
-    public Custo(double imposto, double custoVariavel, double custoFixo, double margemLucro, LocalDate dataProcessamento){
+    public Custo(BigDecimal imposto, BigDecimal custoVariavel, BigDecimal custoFixo, BigDecimal margemLucro, LocalDate dataProcessamento){
         this.imposto = imposto;
         this.custoVariavel = custoVariavel;
         this.custoFixo = custoFixo;
@@ -49,16 +50,16 @@ public class Custo{
         return id;
     }
     
-    public double getImposto() {
+    public BigDecimal getImposto() {
         return imposto;
     }
-    public double getCustoVariavel() {
+    public BigDecimal getCustoVariavel() {
         return custoVariavel;
     }
-    public double getCustoFixo() {
+    public BigDecimal getCustoFixo() {
         return custoFixo;
     }
-    public double getMargemLucro() {
+    public BigDecimal getMargemLucro() {
         return margemLucro;
     }
     public LocalDate getDataProcessamento() {
@@ -70,16 +71,16 @@ public class Custo{
         this.id = id;
     }
     
-    public void setImposto(double imposto) {
+    public void setImposto(BigDecimal imposto) {
         this.imposto = imposto;
     }
-    public void setCustoVariavel(double custoVariavel) {
+    public void setCustoVariavel(BigDecimal custoVariavel) {
         this.custoVariavel = custoVariavel;
     }
-    public void setCustoFixo(double custoFixo) {
+    public void setCustoFixo(BigDecimal custoFixo) {
         this.custoFixo = custoFixo;
     }
-    public void setMargemLucro(double margemLucro) {
+    public void setMargemLucro(BigDecimal margemLucro) {
         this.margemLucro = margemLucro;
     }
     public void setDataProcessamento(LocalDate dataProcessamento) {

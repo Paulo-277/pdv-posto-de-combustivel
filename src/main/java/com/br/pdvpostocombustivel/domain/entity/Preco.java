@@ -1,4 +1,5 @@
 package com.br.pdvpostocombustivel.domain.entity;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -28,7 +29,6 @@ public class Preco{
 
     @Column(length = 10, nullable = false)
     private LocalDate horaAlteracao;
-
 
     /**
      * Construtor
