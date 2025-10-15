@@ -54,7 +54,7 @@ public class Contato{
     public String getEmail(){
         return email;
     }
-    public String getEndereço(){
+    public String getEndereco(){
         return endereco;
     }
 
@@ -71,8 +71,8 @@ public class Contato{
     public void setEmail(String email){
         this.email = email;
     }
-    public void setEndereço(String endereço){
-        this.endereco = endereço;
+    public void setEndereco(String endereco){
+        this.endereco = endereco;
     }
 
 }
