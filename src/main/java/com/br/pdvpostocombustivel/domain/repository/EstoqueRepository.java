@@ -10,6 +10,7 @@ public interface EstoqueRepository extends JpaRepository<Estoque, Long> {
     Optional<Estoque> findByLocalTanque (String localTanque);
     Optional<Estoque> findByLocalEndereco (String localEndereco);
     Optional<Estoque> findByDataValidade (LocalDate dataValidade);
+    Optional<Estoque> findByLoteFabricacao (String loteFabricacao);
 
     boolean existsByLocalTanque (String localTanque);
     boolean existsByLocalEndereco (String localEndereco);
