@@ -1,15 +1,16 @@
 package com.br.pdvpostocombustivel.api.custo.dto;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 /*
 Para Resposta
 */
 public record CustoResponse(
-        Double imposto,
-        Double custoVariavel,
-        Double custoFixo,
-        Double margemLucro,
+        BigDecimal imposto,
+        BigDecimal custoVariavel,
+        BigDecimal custoFixo,
+        BigDecimal margemLucro,
         LocalDate dataProcessamento
 )
 {}
