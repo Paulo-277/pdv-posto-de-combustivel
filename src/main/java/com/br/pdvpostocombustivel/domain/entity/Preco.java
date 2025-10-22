@@ -9,7 +9,6 @@ import jakarta.persistence.Table;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.LocalTime;
 
 @Entity
 @Table(name = "preco")
@@ -29,12 +28,12 @@ public class Preco{
     private LocalDate dataAlteracao;
 
     @Column(nullable = false)
-    private LocalTime horaAlteracao;
+    private LocalDate horaAlteracao;
 
     /**
      * Construtor
      */
-    public Preco(BigDecimal valor, LocalDate dataAlteracao, LocalTime horaAlteracao){
+    public Preco(BigDecimal valor, LocalDate dataAlteracao, LocalDate horaAlteracao){
         this.valor = valor;
         this.dataAlteracao = dataAlteracao;
         this.horaAlteracao = horaAlteracao;
@@ -53,7 +52,7 @@ public class Preco{
     public LocalDate getDataAlteracao(){
         return dataAlteracao;
     }
-    public LocalTime getHoraAlteracao(){
+    public LocalDate getHoraAlteracao(){
         return horaAlteracao;
     }
 
@@ -70,7 +69,7 @@ public class Preco{
     public void setDataAlteracao(LocalDate dataAlteracao){
         this.dataAlteracao = dataAlteracao;
     }
-    public void setHoraAlteracao(LocalTime horaAlteracao){
+    public void setHoraAlteracao(LocalDate horaAlteracao){
         this.horaAlteracao = horaAlteracao;
     }
 
