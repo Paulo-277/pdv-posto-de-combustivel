@@ -4,6 +4,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 /*
 Para Entrada
@@ -11,6 +12,6 @@ Para Entrada
 public record PrecoRequest(
         BigDecimal valor,
         @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)LocalDate dataAlteracao,
-        @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)LocalDate horaAlteracao
+        @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalTime horaAlteracao
 )
 {}

@@ -20,7 +20,7 @@ public class Preco{
     private Long id;
 
     /**
-     * Atributos : definem um atributo
+     * Atributos: definem um atributo
      */
     @Column(length = 10, nullable = false)
     private BigDecimal valor;
@@ -34,9 +34,6 @@ public class Preco{
     /**
      * Construtor
      */
-    public Preco() {
-    }
-    
     public Preco(BigDecimal valor, LocalDate dataAlteracao, LocalTime horaAlteracao){
         this.valor = valor;
         this.dataAlteracao = dataAlteracao;
