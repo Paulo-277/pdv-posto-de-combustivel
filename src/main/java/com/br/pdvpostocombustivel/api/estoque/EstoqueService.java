@@ -112,6 +112,7 @@ public class EstoqueService {
 
     private EstoqueResponse toResponse(Estoque e){
         return new EstoqueResponse(
+                e.getId(),
                 e.getQuantidade(),
                 e.getLocalTanque(),
                 e.getLocalEndereco(),
