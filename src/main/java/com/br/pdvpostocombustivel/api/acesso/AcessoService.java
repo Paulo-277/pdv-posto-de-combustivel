@@ -83,6 +83,7 @@ public class AcessoService {
         if (!repository.existsById(id)){
             throw new IllegalArgumentException("Acesso não encontrado. id=" + id);
         }
+        repository.deleteById(id);
     }
 
     //----------Helpers----------
@@ -103,6 +104,7 @@ public class AcessoService {
 
     private AcessoResponse toResponse(Acesso a){
         return new AcessoResponse(
+                a.getId(),
                 a.getUsuario(),
                 a.getSenha()
         );
