@@ -130,6 +130,7 @@ public class ContatoService {
 
     private ContatoResponse toResponse(Contato c){
         return new ContatoResponse(
+                c.getId(),
                 c.getTelefone(),
                 c.getEmail(),
                 c.getEndereco()
