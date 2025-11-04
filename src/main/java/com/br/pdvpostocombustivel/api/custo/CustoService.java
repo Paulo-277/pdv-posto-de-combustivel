@@ -84,6 +84,7 @@ public class CustoService {
         if (!repository.existsById(id)) {
             throw new IllegalArgumentException("Custo não encontrado. id=" + id);
         }
+        repository.deleteById(id);
     }
 
     // ---------- Helpers ----------
@@ -99,6 +100,7 @@ public class CustoService {
 
     private CustoResponse toResponse(Custo c){
         return new CustoResponse(
+                c.getId(),
                 c.getImposto(),
                 c.getCustoVariavel(),
                 c.getCustoFixo(),
