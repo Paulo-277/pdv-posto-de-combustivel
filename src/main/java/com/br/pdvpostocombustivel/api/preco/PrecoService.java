@@ -1,6 +1,5 @@
 package com.br.pdvpostocombustivel.api.preco;
 
-
 import com.br.pdvpostocombustivel.api.preco.dto.PrecoRequest;
 import com.br.pdvpostocombustivel.api.preco.dto.PrecoResponse;
 import com.br.pdvpostocombustivel.domain.entity.Preco;
