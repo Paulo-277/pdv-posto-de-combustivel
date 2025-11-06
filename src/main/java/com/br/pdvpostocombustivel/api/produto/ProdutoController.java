@@ -20,7 +20,7 @@ public class ProdutoController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public ProdutoResponse create(ProdutoRequest req){
+    public ProdutoResponse create(@RequestBody ProdutoRequest req){
         return service.create(req);
     }
 

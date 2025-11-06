@@ -1,13 +1,10 @@
 package com.br.pdvpostocombustivel.api.produto.dto;
 
-/*
-para a Resposta
- */
 public record ProdutoResponse(
+        Long id,
         String nome,
         String referencia,
-        String fronecedor,
+        String fornecedor,
         String categoria,
         String marca
-)
-{}
+) {}

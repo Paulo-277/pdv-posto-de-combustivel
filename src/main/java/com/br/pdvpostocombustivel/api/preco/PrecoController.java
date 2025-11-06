@@ -22,7 +22,7 @@ public class PrecoController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public PrecoResponse create(PrecoRequest req){
+    public PrecoResponse create(@RequestBody PrecoRequest req){
         return service.create(req);
     }
 
