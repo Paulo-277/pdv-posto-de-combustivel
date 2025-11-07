@@ -39,8 +39,7 @@ public class Produto{
     /**
      * Construtor
      */
-    public Produto() {
-    }
+    protected Produto() {}
     
     public Produto(String nome, String referencia, String fornecedor, String categoria, String marca){
         this.nome = nome;

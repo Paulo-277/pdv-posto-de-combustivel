@@ -28,8 +28,7 @@ public class Acesso{
     /**
      * Construtor
      */
-    public Acesso() {
-    }
+    protected Acesso() {}
     
     public Acesso(String usuario, String senha){
         this.usuario = usuario;

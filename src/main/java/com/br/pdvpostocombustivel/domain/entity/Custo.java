@@ -34,8 +34,7 @@ public class Custo{
     private LocalDate dataProcessamento;
 
     //Construtor
-    public Custo() {
-    }
+    protected Custo() {}
     
     public Custo(BigDecimal imposto, BigDecimal custoVariavel, BigDecimal custoFixo, BigDecimal margemLucro, LocalDate dataProcessamento){
         this.imposto = imposto;

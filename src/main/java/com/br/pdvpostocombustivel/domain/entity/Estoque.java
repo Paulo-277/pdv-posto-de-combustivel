@@ -32,7 +32,7 @@ public class Estoque{
     @Column(length = 10, nullable = false)
     private LocalDate dataValidade;
 
-    public Estoque() {
+    protected Estoque() {
     }
 
     public Estoque(BigDecimal quantidade, String localTanque, String localEndereco, String loteFabricacao, LocalDate dataValidade) {

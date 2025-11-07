@@ -32,8 +32,7 @@ public class Contato{
     /**
      * Construtor
      */
-    public Contato() {
-    }
+    protected Contato() {}
     
     public Contato(String telefone, String email, String endereço){
         this.telefone = telefone;

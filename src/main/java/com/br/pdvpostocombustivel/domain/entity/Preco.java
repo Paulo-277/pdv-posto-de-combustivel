@@ -9,6 +9,7 @@ import jakarta.persistence.Table;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Entity
 @Table(name = "preco")
@@ -20,6 +21,11 @@ public class Preco{
 
     /**
      * Atributos: definem um atributo
+     * Correção no banco de dados! (lançar no query)
+     *
+     * ALTER TABLE preco
+     * ALTER COLUMN "hora_alteracao" TYPE time without time zone
+     * USING '00:00:00'::time without time zone;
      */
     @Column(length = 10, nullable = false)
     private BigDecimal valor;
@@ -28,12 +34,14 @@ public class Preco{
     private LocalDate dataAlteracao;
 
     @Column(nullable = false)
-    private LocalDate horaAlteracao;
+    private LocalTime horaAlteracao;
 
     /**
      * Construtor
      */
-    public Preco(BigDecimal valor, LocalDate dataAlteracao, LocalDate horaAlteracao){
+    protected Preco() {}
+    
+    public Preco(BigDecimal valor, LocalDate dataAlteracao, LocalTime horaAlteracao){
         this.valor = valor;
         this.dataAlteracao = dataAlteracao;
         this.horaAlteracao = horaAlteracao;
@@ -52,7 +60,7 @@ public class Preco{
     public LocalDate getDataAlteracao(){
         return dataAlteracao;
     }
-    public LocalDate getHoraAlteracao(){
+    public LocalTime getHoraAlteracao(){
         return horaAlteracao;
     }
 
@@ -69,7 +77,7 @@ public class Preco{
     public void setDataAlteracao(LocalDate dataAlteracao){
         this.dataAlteracao = dataAlteracao;
     }
-    public void setHoraAlteracao(LocalDate horaAlteracao){
+    public void setHoraAlteracao(LocalTime horaAlteracao){
         this.horaAlteracao = horaAlteracao;
     }
 

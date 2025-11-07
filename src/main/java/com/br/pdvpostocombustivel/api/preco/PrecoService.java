@@ -93,6 +93,7 @@ public class PrecoService {
 
     private PrecoResponse toResponse(Preco p){
         return new PrecoResponse(
+                p.getId(),
                 p.getValor(),
                 p.getDataAlteracao(),
                 p.getHoraAlteracao()
