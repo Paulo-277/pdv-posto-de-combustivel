@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Service
 @Transactional
@@ -55,8 +57,8 @@ public class PrecoService {
                 .orElseThrow(() -> new IllegalArgumentException("Preço não encontrado. id=" +id));
 
         p.setValor(req.valor());
-        p.setDataAlteracao(req.dataAlteracao());
-        p.setHoraAlteracao(req.horaAlteracao());
+        p.setDataAlteracao(LocalDate.now());
+        p.setHoraAlteracao(LocalTime.now());
 
         return toResponse(repository.save(p));
     }
@@ -66,9 +68,11 @@ public class PrecoService {
         Preco p = repository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Preço não encontrado. id=" +id));
 
-        if(req.valor() != null) p.setValor(req.valor());
-        if(req.dataAlteracao() != null) p.setDataAlteracao(req.dataAlteracao());
-        if(req.horaAlteracao() != null) p.setHoraAlteracao(req.horaAlteracao());
+        if(req.valor() != null) {
+            p.setValor(req.valor());
+            p.setDataAlteracao(LocalDate.now());
+            p.setHoraAlteracao(LocalTime.now());
+        }
 
         return toResponse(repository.save(p));
     }
@@ -86,8 +90,8 @@ public class PrecoService {
     private Preco toEntity(PrecoRequest req){
         return new Preco(
                 req.valor(),
-                req.dataAlteracao(),
-                req.horaAlteracao()
+                LocalDate.now(),
+                LocalTime.now()
         );
     }
 
