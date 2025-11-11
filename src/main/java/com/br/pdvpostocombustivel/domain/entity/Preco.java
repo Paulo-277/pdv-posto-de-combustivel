@@ -21,7 +21,7 @@ public class Preco{
 
     /**
      * Atributos: definem um atributo
-     * Correção no banco de dados! (lançar no query)
+     * Correção no banco de dados! (lançar no query do pg admin)
      *
      * ALTER TABLE preco
      * ALTER COLUMN "hora_alteracao" TYPE time without time zone
